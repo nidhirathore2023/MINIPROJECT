@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#nav{
+    display: flex;
+    border: 2px solid black;
+    list-style: none;
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-bottom: 20px;
+    background-color: rgb(13, 129, 133);
+}
+#nav a{
+    margin-left: 100px;
+    font-weight: bold;
+    color: white;
+    padding: 5px;
+}
+#nav a:hover{
+    margin-left: 100px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    border-radius:10px;
+   padding: 5px;
+}
+#menu
+{
+   padding-left: 0px;
+   margin-left: 0px;
+    height: 25px;
+    width: 38px;
+}
+#profile
+{
+    padding-top: 20px;
+    color: black;
+    padding-left: 60px;
+    background-color: rgb(13, 129, 133);
+    padding-right: 60px;
+    border:solid black 3px;
+    padding-bottom: 50px;
+}
+#profile h2{
+    font-size:30px;
+}
+#profile img{
+    width: 100px;
+}
+#profile h5{
+    padding-top: 20px;
+    font-size: 15px;
+}
+#main
+{
+    display: flex;
+}
+#background
+{
+    background:url("main.jpg");
+   background-position: center;
+   background-size: cover;
+  height: 520px;
+    width:1000px;
+}
+#background h2{
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 35px;
+}
+#logout{
+    margin-left: 130px;
+    border:solid 1px black;
+    padding: 3px;
+}
+#project
+{
+    display: flex;
+    height: 80px;
+    background: rgb(16, 82, 180);
+}
+#project h2{
+    
+    text-align: center;
+    color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 600px;
+}
+#project img{
+ height: 50px;
+    width: 50px;margin-left: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+table, th, td {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+    margin-left: 50px;
+    margin-top: 40px;
+  }
+  th
+  {
+      background: blue;
+      color: white;
+  }
+  td
+  {
+      font-weight: bold;
+  }
+#main2{
+    display: inline;
+}
