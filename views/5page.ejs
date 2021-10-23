@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    <link rel="stylesheet" href="assets/5page.css">
+</head>
+<body>
+     <!--preloader -->
+     <div id="preloader">
+    </div>
+
+    <nav>
+        
+        <ul id="nav">
+            <img src="assets/menu.jpg" id="menu" onclick="toggle()">
+            <li><a href="/2page">DASHBOARD</a></li>
+            <li><a href="/3page">PROJECTS</a></li>
+            <li><a href="/4page">END_SEMESTER</a></li>
+            <li><a href="/5page">PLACEMENTS</a></li>
+            <li><a href="/logout" id="logout">LOGOUT</a></li>
+            
+        </ul>
+    </nav>
+
+<div id="main">
+   <div id="profile">
+       <h2>My Profile</h2><br>
+       <img src="assets/profile_image.jpg"><br>
+       <h5 id="name">NAME-</h5><br>
+       <h5 id="studentid">STUDENT_ID-</h5><br>
+       <h5>COURSE - B.TECH</h6><br>
+       <h5>SEMESTER - V</h6><br>
+       <h5>YEAR - 3rd</h6><br>
+    </div>
+    <div id="main2">
+        <div id="placements">
+            <img src="assets/end_semester.jpg">
+        <h2>PLACEMENTS</h2>
+    </div>
+    
+    <table id="container">
+        <tr>
+            <th>S.NO</th>
+            <th>Company</th>
+            <th>Coding Round 1</th>
+            <th>Coding Round 2</th>
+            <th>Interview Round</th>
+            <th>Status</th>
+        </tr>
+    
+        <tbody>
+            <td>1</td>
+            <td>Amazon</td>
+            <td>Qualified</td>
+            <td>Qualified</td>
+            <td>Qualified</td>
+            <td>Selected</td>
+        </tbody>
+    </table>
+    
+    </div>
+    </div>
+    
+</body>
+<script>
+    /*preloader*/
+var loader=document.getElementById("preloader");
+window.addEventListener("load",function(){
+    loader.style.display="none";
+})
+
+// toggle menubar
+function toggle()
+{
+    var menu=document.getElementById("menu");
+    var profile=document.getElementById("profile");
+   if(profile.style.display == "block") { 
+    profile.style.display = "none";
+    var end_semester=document.getElementById("placements");
+    var container=document.getElementById("container");
+    end_semester.style.width="1400px"
+    container.style.marginLeft="140px";
+  }
+  else { 
+    profile.style.display = "block";
+    var end_semester=document.getElementById("placements");
+    end_semester.style.width="1020px";
+    var container=document.getElementById("container");
+    container.style.marginLeft="50px";
+  
+  }
+}
+
+</script>
+</html>
