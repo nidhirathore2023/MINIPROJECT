@@ -84,6 +84,24 @@ border: white solid 6px;
    font-weight: bold;
    text-align: center;
 }
+.admin_btn{
+    margin-left: 595px;
+    margin-top: 100px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding-left: 152px;
+    padding-right: 148px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    border: 3px black solid;
+    font-weight: bold;
+
+}
+.admin_btn:hover{
+    background-color: blanchedalmond;
+}
 #login{
     margin:20px 50px 20px 50px;
    border-radius: 5px;

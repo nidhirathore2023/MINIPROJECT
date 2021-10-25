@@ -65,6 +65,7 @@
 #profile
 {
     width: 300px;
+    height: 600px;
     background-color: rgb(11, 11, 85);
     color:white;
     text-align: center;
@@ -138,6 +139,7 @@
   padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 600px;
+    margin-left: 200px;
 }
 #end_semester img{
  height: 50px;

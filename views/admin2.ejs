@@ -7,6 +7,14 @@
     <title>DASHBOARD</title>
     <link rel="stylesheet" href="../assets/2page.css">
 </head>
+<style>
+    #nav a{
+    margin-left: 150px;
+}
+#nav a:hover{
+    margin-left: 150px;
+}
+</style>
 <body>
      <!--preloader -->
      <div id="preloader">
@@ -16,10 +24,8 @@
         
         <ul id="nav">
             <img src="../assets/menu.jpg" id="menu" onclick="toggle()">
-            <li><a href="/2page" >DASHBOARD </a></li>
-            <li><a href="/3page">PROJECTS</a></li>
-            <li><a href="/4page">END_SEMESTER</a></li>
-            <li><a href="/5page">PLACEMENTS</a></li>
+            <li><a href="/admin2" >DASHBOARD </a></li>
+            <li><a href="/admin3">STUDENTS</a></li>
             <li><a href="/logout" id="logout">LOGOUT</a></li>
             
         </ul>
@@ -29,14 +35,12 @@
    <div id="profile">
        <h2>My Profile</h2><br>
        <img src="../assets/profile_image.jpg"><br>
-       <h5 id="name">NAME-  <%-name%></h5><br>
-       <h5 id="studentid">STUDENT_ID-  <%-id%></h5><br>
-       <h5>COURSE -  B.TECH</h6><br>
-       <h5>SEMESTER -  V</h6><br>
-       <h5>YEAR -  3rd</h6><br>
+       <h5 id="name">NAME- <%-name%>  </h5><br>
+       <h5 id="studentid">ADMIN_ID-<%-id%>  </h5><br>
+       <h5>DEPARTMENT- CS/IT</h6><br>
     </div>
     <div id="content">
-        <h1>Evaluation of Academic Performance System </h1>
+        <h1>Evaluation of Academic Performance System (ADMIN)</h1>
         <img src="../assets/1.jpg" id="img">
     </div>
 </div>

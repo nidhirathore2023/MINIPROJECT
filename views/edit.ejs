@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+    
+</head>
+<style>
+    *{
+    margin:0;
+    padding: 0;
+}
+nav{
+    background-color: rgb(13, 13, 70);
+    color: white;
+    text-align: center;
+    display: flex;
+    padding: 30px;
+}
+nav h3{
+    margin-left: 80px;
+}
+.project_edit{
+    text-align: center;
+    padding: 30px;
+}
+
+.container1{
+    margin-left: 100px;
+    margin-top: 20px;
+}
+.container1 table, th, td {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    padding: 20px;
+    margin-left: 10px;
+    margin-top: 40px;
+  }
+  .container1 th
+  {
+      background: rgb(5, 5, 82);
+      color: white;
+  }
+.container1 td
+  {
+      font-weight: bold;
+  }
+  .edit{
+        padding: 5px 25px 5px 25px;
+        color: white;
+        font-weight: bold;
+        background-color: rgb(21, 21, 87);
+        cursor: pointer;
+        text-decoration: none;
+    }
+</style>
+<body>
+     <!--preloader -->
+     <div id="preloader">
+    </div>
+    <nav>
+       <h3>NAME -  <%-name%>  </h3>
+    </nav>
+    
+    <div class="project_edit">
+        <h2>
+            END_SEMESTER
+        </h2>
+        <table class="container1">
+            <tr>
+            <th>S.NO</th>
+            <th>SUBJECT</th>
+            <th>MID-SEM(25)</th>
+            <th>END-SEM(50)</th>
+            <th>Sessional(25)</th>
+            <th>TOTAL(100)</th>
+            <th>GRADE</th>
+            <th>UPDATE</th>
+            </tr>
+            <tbody>
+                <% data.forEach(function(data){  %>
+                    <tr>
+                        <td><%-data.subject_number%></td>
+                        <td><%-data.subject%></td>
+                        <td><%-data.mid%></td>
+                        <td><%-data.end_marks%></td>
+                        <td><%-data.sessional%></td>
+                        <td><%-data.total%></td>
+                        <td><%-data.grade%></td>
+                        <td>
+                            <a  class="edit" href="/update/<%-data.subject%>">EDIT</a>
+                         </td>  
+                    </tr>
+                    <%  });%>
+            </tbody>
+            
+           
+        </table>
+
+    </div>
+
+    
+</body>
+<script>
+    /*preloader*/
+var loader=document.getElementById("preloader");
+window.addEventListener("load",function(){
+    loader.style.display="none";
+})
+
+
+
+</script>
+</html>

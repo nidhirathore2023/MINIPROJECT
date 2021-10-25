@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    h1{
+        text-align: center;
+        background-color: rgb(12, 12, 73);
+        color: white;
+        padding: 5px;
+    }
+    form{
+       margin-top:20px;
+       margin-left: 240px;
+    }
+    input{
+        width: 500px;
+    }
+    h6{
+        padding: 20px;
+        font-size: 18px;
+    }
+    .submit{
+        margin-top: 20px;
+        background-color:  rgb(12, 12, 73);
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+    }
+    
+</style>
+<body>
+    <h1>Subject - <%-name%></h1>
+    <form method="post" action="/update">
+        <h6>Mid_sem(25)</h2><input name="mid" type="number" value="<%-data.mid%>"><br>
+        <h6>End_sem(50)</h2><input   name="end" value="<%-data.end_marks%>" type="number" >
+        <h6>Sessional(25)</h2><input name="sessional"value="<%-data.sessional%>" type="number" >
+        <h6>Total(100)</h2><input   name ="total" value="<%-data.total%>" type="number" >
+        <h6>Grade</h2><input name="grade"  value='<%-data.grade%>' type="text" ><br>
+         <input type="submit" class="submit" value="UPDATE">
+         
+    </form>
+</body>
+</html>

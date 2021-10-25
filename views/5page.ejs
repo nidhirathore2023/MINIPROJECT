@@ -29,8 +29,8 @@
    <div id="profile">
        <h2>My Profile</h2><br>
        <img src="assets/profile_image.jpg"><br>
-       <h5 id="name">NAME-</h5><br>
-       <h5 id="studentid">STUDENT_ID-</h5><br>
+       <h5 id="name">NAME- <%-name%></h5><br>
+       <h5 id="studentid">STUDENT_ID- <%-id%></h5><br>
        <h5>COURSE - B.TECH</h6><br>
        <h5>SEMESTER - V</h6><br>
        <h5>YEAR - 3rd</h6><br>
@@ -52,12 +52,16 @@
         </tr>
     
         <tbody>
-            <td>1</td>
-            <td>Amazon</td>
-            <td>Qualified</td>
-            <td>Qualified</td>
-            <td>Qualified</td>
-            <td>Selected</td>
+            <% data.forEach(function(data){  %>
+                <tr>
+                    <td><%-data.company_number%></td>
+                    <td><%-data.company_name%></td>
+                    <td><%-data.round1%></td>
+                    <td><%-data.round2%></td>
+                    <td><%-data.interview%></td>
+                    <td><%-data.status%></td>
+                </tr>
+                <%  });%>
         </tbody>
     </table>
     

@@ -7,7 +7,12 @@
     <title>Evaluation System</title>
     <link rel="stylesheet" href="../assets/1page.css">
 </head>
-
+<style>
+    .admin_btn{
+        padding-left: 143px;
+    padding-right: 143px;
+    }
+</style>
 <body>
        <!--preloader -->
            <div id="preloader">
@@ -18,14 +23,14 @@
       <!-- login -->
   
     
-    <form action='/'id="loginheading" method="post">
-        <h2 id="heading2"> Student Login </h2><br>
+    <form action='/admin1'id="loginheading" method="post">
+        <h2 id="heading2"> Admin Login </h2><br>
         <div class="col"></div>
         <input type="text" placeholder="USERNAME" name="username" id="username">
         <input type="password" placeholder="PASSWORD"  name="password" id="password">
         <input type="submit" id="login" value="LOGIN">
     </form>
-    <a class="admin_btn" href="/admin1">ADMIN LOGIN</a>
+    <a class="admin_btn" href="/">STUDENT LOGIN</a>
     </div>
 </div> 
 </body>
@@ -37,5 +42,3 @@ window.addEventListener("load",function(){
 })
 </script>
 </html>
-
-
