@@ -39,11 +39,11 @@
 <body>
     <h1>Subject - <%-name%></h1>
     <form method="post" action="/update">
-        <h6>Mid_sem(25)</h2><input name="mid" type="number" value="<%-data.mid%>"><br>
-        <h6>End_sem(50)</h2><input   name="end" value="<%-data.end_marks%>" type="number" >
-        <h6>Sessional(25)</h2><input name="sessional"value="<%-data.sessional%>" type="number" >
-        <h6>Total(100)</h2><input   name ="total" value="<%-data.total%>" type="number" >
-        <h6>Grade</h2><input name="grade"  value='<%-data.grade%>' type="text" ><br>
+        <h6>Mid_sem(25)</h2><input name="mid" id="mid" type="number" value="<%-data.mid%>"><br>
+        <h6>End_sem(50)</h2><input   name="end" id="end" value="<%-data.end_marks%>" type="number" >
+        <h6>Sessional(25)</h2><input name="sessional" id="sessional" value="<%-data.sessional%>" type="number" >
+        <h6>Total(100)</h2><input   name ="total" id="total" value="<%-data.total%>" type="number" >
+        <h6>Grade</h2><input name="grade" id="total" value='<%-data.grade%>' type="text" ><br>
          <input type="submit" class="submit" value="UPDATE">
          
     </form>

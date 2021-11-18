@@ -45,7 +45,7 @@ var a_current_id;
                 res.redirect('/2page');
                 s_current_id=results[0].student_id;
                 s_current_user=username;
-                
+                console.log(username);
             }
             else
             {
@@ -58,15 +58,17 @@ var a_current_id;
 
     app.get('/2page',encoder,function(req,res){
     res.render('2page',{
-        s_id:current_id,
-        s_name:current_user
+        id:s_current_id,
+        name:s_current_user
+        
      });
+     //console.log(s_current_user);
      });
 
      //  Project page for student
     app.get('/3page',encoder,function(req,res){
     let sql="SELECT * FROM project where user_name =?";
-    let query=connection.query(sql,[current_user],(error,rows)=>{
+    let query=connection.query(sql,[s_current_user],(error,rows)=>{
         if(error) throw error;
         res.render('3page',{
          data:rows,
@@ -80,7 +82,7 @@ var a_current_id;
     // End_semester result (student)
      app.get('/4page',encoder,function(req,res){
      let sql="select * from end_sem where user_name= ?";
-     let query=connection.query(sql,[current_user],(error,rows)=>{
+     let query=connection.query(sql,[s_current_user],(error,rows)=>{
         if(error) throw error;
         res.render('4page',{
          data:rows,
@@ -94,7 +96,7 @@ var a_current_id;
     //Placement Details
     app.get('/5page',encoder,function(req,res){
     let sql="select * from placements where user_name= ?";
-    let query=connection.query(sql,[current_user],(error,rows)=>{
+    let query=connection.query(sql,[s_current_user],(error,rows)=>{
         if(error) throw error;
         res.render('5page',{
          data:rows,
@@ -150,9 +152,11 @@ var a_current_id;
         });  
      })
      })
+     
      // edit end_semester marks
      app.get('/edit/:name',function(req,res){
          var s_name=req.params.name;
+         s_current_user=s_name;
          let sql="select * from end_sem where user_name =? ";
          let query=connection.query(sql,[s_name],(error,rows)=>{
          if(error) throw error;
@@ -168,27 +172,53 @@ var a_current_id;
        app.get('/update/:subject',function(req,res){
         var s_name=req.params.subject;
         cur=s_name;
+        //console.log(cur);
+        //console.log("nidhi");
         let sql="select * from end_sem where subject = ? ";
         let query=connection.query(sql,[s_name],(error,rows)=>{
         if(error) throw error;
         res.render('update',{
         data:rows[0],
-        name:s_name
+        name:s_name,
         });  
-
-        app.post('/update',(req,res)=>{
-            console.log(req.body.mid);
-            let sql="UPDATE end_sem SET mid ='"+req.params.mid+"',end_marks='"+req.params.end+"',sessional ='"+req.params.sessional+"' total= '"+req.params.total+"', grade = '"+req.params.grade+"' WHERE subject = ?";
-            let query=connection.query(sql,[cur],(err,result)=>{
+        
+      })
+       
+   })
+        app.post('/update',encoder,(req,res)=>{
+            console.log(s_current_user);
+            //console.log(parseInt(req.body.mid)+2);
+            //let sql="select * from end_sem where user_name = ? and subject= ?";
+            //let query=connection.query(sql,[s_current_user,cur],(error,rows)=>{
+             // console.log(rows);
+          //})
+            //console.log(req.params.total);
+            var grade;
+            var total=parseInt(req.body.mid)+parseInt(req.body.end)+parseInt(req.body.sessional);
+            if(total>90)
+            {
+              grade="A";
+            }
+            else if(total>80)
+            {
+                grade="B";
+            }
+            else if(total>70)
+            {
+                grade="C";
+            }
+            else{
+                grade="D";
+            }
+            let sql="UPDATE end_sem SET mid  ="+parseInt(req.body.mid)+",end_marks="+parseInt(req.body.end)+",sessional="+parseInt(req.body.sessional)+",total="+total+",grade='"+grade+"' WHERE subject = ? and user_name = ?";
+            let query=connection.query(sql,[cur,s_current_user],(err,result)=>{
                 if(err) throw err;
-                res.render('edit');
+                res.redirect('/admin3');
                
             })
-        })
         
-     })
-       
-      })
+        })
+    
 
 
 
